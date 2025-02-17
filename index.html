@@ -1,50 +1,63 @@
 <!DOCTYPE html> 
 <html> 
 <!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
- 
-THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
- 
+
+<!-- THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Zara Illston
  
 Further Information:
-http://diystream.cns.utexas.edu/
-
+http://cns.utexas.edu/fri
+ 
 Research Educator:
 Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+The goal of this code is to create an online diagnostic app to tell the difference between symptoms of endometriosis
+and pelvic inflammatory disease.
  
 Known Issues:
-blah, blah, blah, blah
-Ignore this error message if you see it using the javaScript console: Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
+There is no ability to calculate results if no questions are answered, the footer repeats, and the app keeps inputting
+infinite question answers if the page is not reloaded.
 
-References:
 https://www.w3schools.com/w3css/default.asp
-https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
--->
+https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file -->
 	
-<head> 
-	<title>Hello World</title>  
-]	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<link rel="stylesheet" href="w3.css">
-	<link rel="stylesheet" href="w3-colors-flat.css">
-</head> 
+   <head> 
+      <title>Hello World</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+
+<!-- The code shown above is used to display the title of the app shown on the tab of the website page. -->
 
 <script>
+  let endometriosisCount = 0; 
+  let pelvicinflammatoryCount = 0;
+  function handleResponse(nextPageUrl, answer) {
+    if (answer === 'yes') {
+      endometriosisCount++;
+    } else {
+      pelvicinflammatoryCount++; 
+    }
+    window.location.href = nextPageUrl;
+  }
+  function calculateResults() {
+    const totalQuestions = pelvicinflammatoryCount + endometriosisCount;
+    const pelvicinflammatoryPercentage = ((pelvicinflammatoryCount / totalQuestions) * 100).toFixed(2);
+    const endometriosisPercentage = ((endometriosisCount / totalQuestions) * 100).toFixed(2);
+    document.getElementById("resultsOutput").innerHTML = `Pelvic Inflammatory Disease: ${pelvicinflammatoryPercentage}%<br>Endometriosis: ${endometriosisPercentage}%`;
+  }
+</script>
+<!-- This code is used to count the number of times that a coded allergy or cold symptom is recorded. The code above is used to define a Javascript functi0n that records a value dependent on the answer chosen, and switches to the next page when any "yes" or "no" button is pressed. This code is used to calculate the results based on the values recorded from the answered questions. This code also displays the percentages of cold and flu when the "results" button is pressed. I also wanted to note that embedding this into the script would entirely disrupt my code -->
+	
 
-	//YOUR JAVASCRIPT GOES HERE
-
-</script>	
-
-
-<!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
-<style>	
+<style>  
 .body {
      margin: 0em;
 }
@@ -52,10 +65,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 .page {
     width: 100vw;
     height: 100vh;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: -100vw;
-    overflow-y: auto;
+    overflow-y: auto; display: block;
     z-index: 0;
     background-color: hsl(0,0%,100%);
 }
@@ -64,12 +77,160 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     left: 0vw;
     z-index: 1;
 }
-</style>
 
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+</style>
+<!-- The code above codes for the stylistic choices of the headers, pages, and footers such as the heighth, width, and index 
+sizes. -->
 <body>
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Endometriosis or Pelvic Inflammatory Disease?</h1>
+</div>
+<!-- This code above defines the header for the first page. -->	
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might have Endometriosis but wonder if it is Pelvic Inflammatory Disease? Answer a few short questions to find out!</p>
 	
-	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
-	REPLACE THIS TEXT
+	<a href="#two" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+<!-- This code above is used to display the introduction paragraph, explain where the research is being done, and provide an 
+advisory warning about the purpose of the app. -->
+<div class="page" id="two">
+  <div class="w3-container w3-flat-carrot">
+    <h1>Question 1</h1>
+  </div>
+<!-- This code above defines the second page and labels the header as "Question 1" -->
+  <div id="content" class="w3-container">
+    <p>Have your symptoms recently developed?</p>
+<!-- This code shows the details of the first symptoms being asked. -->
+    <button class="w3-btn w3-black" onclick="handleResponse('#three', 'no')">Yes</button>
+    <button class="w3-btn w3-black" onclick="handleResponse('#three', 'yes')">No</button>
+  </div>
+</div>
+<!-- This code above creates the buttons, and defines that on the click of either "Yes" or "No" button, a value is to be recorded
+and the page is to move on to the next page. -->
+<script>
+  function navigateToNextPage(url) {
+    window.location.href = url;
+  }
+</script>
+<!-- This code above is the JavaScript function that allows for the page to be moved on to page three on the click of a button. -->
+<div class="page" id="three">
+  <div class="w3-container w3-flat-carrot">
+    <h1>Question 2</h1>
+  </div>
+<!-- This code above defines page three as a new page, and allows the header to read "Question 2" -->
+  <div id="content" class="w3-container">
+    <p>Have you ever had an untreated STI?</p>
+<!-- This code above allows the next symptomatic question to be displayed on page three. -->
+    <button class="w3-btn w3-black" onclick="handleResponse('#four', 'no')">Yes</button>
+    <button class="w3-btn w3-black" onclick="handleResponse('#four', 'yes')">No</button>
+  </div>
+</div>
+<!-- The code above creates the "Yes" and "No" buttons on page three and records the values of the response based on the button
+clicked, and moves the page to page four. -->
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+<!-- This code above makes the footer read "DIY!" for the first three pages. -->
+<div class="page" id="four">
+  <div class="w3-container w3-flat-carrot">
+    <h1>Question 3</h1>
+  </div>
+<!-- This code above defines page four as a new page, and displays the header as "Question 3". -->
+  <div id="content" class="w3-container">
+    <p>Do you severe menstrual cramps?</p>
+<!-- This code above displays the symptomatic question below the "Question 3" header. -->
+    <button class="w3-btn w3-black" onclick="handleResponse('#five', 'yes')">Yes</button>
+    <button class="w3-btn w3-black" onclick="handleResponse('#five', 'no')">No</button>
+  </div>
+</div>
+<!-- This code above creates the buttons on page four, and codes the "yes" response to code for cold, and "no" to code for allergy.
+This code also moves to page five after either button is pressed. -->
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+<!-- The code above creates the footer displaying "DIY!" on page four. -->
+<div class="page" id="five">
+  <div class="w3-container w3-flat-carrot">
+    <h1>Question 4</h1>
+  </div>
+<!-- The code above defines page five as a new page, and makes "Question 4" the header of the page. -->
+  <div id="content" class="w3-container">
+    <p>Do you have pain during urination?</p>
+<!-- The code above defines the next symptomatic question on page five, and defines it below the header -->
+    <button class="w3-btn w3-black" onclick="handleResponse('#six', 'yes')">Yes</button>
+    <button class="w3-btn w3-black" onclick="handleResponse('#six', 'no')">No</button>
+  </div>
+</div>
+<!-- The code above creates the "Yes" and "No" buttons on page five, quantifies a numerical value for each, and commands the
+clicking of either to move to page six -->
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+<!-- The code above creates the "DIY!" footer on page five. -->	
+<div class="page" id="six">
+  <div class="w3-container w3-flat-carrot">
+    <h1>Question 5</h1>
+  </div>
+<!-- The code above creates page six as a new page and creates the "Question 5" header -->
+  <div id="content" class="w3-container">
+    <p>Do you have consistant pelvic pain?</p>
+<!-- The code above displays the next symptom question on page six below the "Question 5" header -->
+    <button class="w3-btn w3-black" onclick="handleResponse('#seven', 'yes')">Yes</button>
+    <button class="w3-btn w3-black" onclick="handleResponse('#seven', 'no')">No</button>
+  </div>
+</div>
+<!-- The code above creates the buttons on page six and has the JavaScript function that on the click of the button, the answer
+codes for a numerical value and moving to page seven. -->
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+<!-- The code above creates the footer on page six that displays "DIY!" -->
+<div class="page" id="seven">
+  <div class="w3-container w3-flat-carrot">
+    <h1>Question 6</h1>
+  </div>
+<!-- The code above creates page seven as a new page and defines the header as "Question 6" -->
+  <div id="content" class="w3-container">
+    <p>Do you have abnormal smelling vaginal discharge?</p>
+<!-- The code above defines the final question that is intended to identify a cold, and places the question below the header -->
+    <button class="w3-btn w3-black" onclick="handleResponse('#results', 'no')">Yes</button>
+    <button class="w3-btn w3-black" onclick="handleResponse('#results', 'yes')">No</button>
+  </div>
+</div>
+<!-- The code above creates the buttons on page seven and directs them to record a numerical value for either cold or allergies
+depending on which button is clicked. Cold is recorded for "yes" and allergies for "no". The code also directs the page to shift
+to the results page after a button is clicked. -->
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+<!-- The code above defines the footer for page seven to read the same as the other pages -->
+<div class="page" id="results">
+  <div class="w3-container w3-flat-carrot">
+    <h1>Results</h1>
+  </div>
+<!-- The code above the defines the last independent page as the results page and shows the header as reading "Results" -->	
+  <div id="content" class="w3-container">
+    <button class="w3-btn w3-black" onclick="calculateResults()">Show Results</button>
+    <p id="resultsOutput"></p>
+  </div>
+</div>
+<!-- The code above creates the button for the results that reads "Show Results", which upon being clicked triggers the JavaScript
+function to calculate the results of the collected numerical values based on the answers clicked in the previous six questions.
+The results output physically displays the percentages that JavaScript calculated after the button for "Show Results" is pressed -->
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+<!-- This code creates the footer on the results page, and allows it to display the words "DIY!", as the other pages have as well -->
 </body>
+<!-- This code defines the end of the body of code -->
 </html>
+<!-- This code above defines the coding language that was used for this website. -->
+<!-- ChatGPT was utilized to help with certain JavaScript and HTML functions in order to make the best version of this website --> 
