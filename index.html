@@ -61,6 +61,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 .body {
      margin: 0em;
 }
+	
+img, object{
+        max-height:90%;
+        max-width:90%;
+}
+
 
 .page {
     width: 100vw;
@@ -93,8 +99,10 @@ sizes. -->
 <!-- This code above defines the header for the first page. -->	
 <div id="content" class="w3-container">
 	<p>Are you feeling like you might have Endometriosis but wonder if it is Pelvic Inflammatory Disease? Answer a few short questions to find out!</p>
-	
+
 	<a href="#two" class="w3-btn w3-grey w3-round"> Get Started </a>
+	<h2>HTML Image</h2>
+		<img src="uterus_smiling.jpg" alt="Uterus Smiling Image" class="resizable-image">
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
@@ -145,7 +153,7 @@ clicked, and moves the page to page four. -->
   </div>
 <!-- This code above defines page four as a new page, and displays the header as "Question 3". -->
   <div id="content" class="w3-container">
-    <p>Do you severe menstrual cramps?</p>
+    <p>Do you have severe menstrual cramps?</p>
 <!-- This code above displays the symptomatic question below the "Question 3" header. -->
     <button class="w3-btn w3-black" onclick="handleResponse('#five', 'yes')">Yes</button>
     <button class="w3-btn w3-black" onclick="handleResponse('#five', 'no')">No</button>
