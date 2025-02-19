@@ -53,6 +53,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     const endometriosisPercentage = ((endometriosisCount / totalQuestions) * 100).toFixed(2);
     document.getElementById("resultsOutput").innerHTML = `Pelvic Inflammatory Disease: ${pelvicinflammatoryPercentage}%<br>Endometriosis: ${endometriosisPercentage}%`;
   }
+    document.getElementById("resizeSlider").addEventListener("input", function () {
+        let newSize = this.value + "px";
+        document.getElementById("resizableImage").style.width = newSize;
+    });
 </script>
 <!-- This code is used to count the number of times that a coded allergy or cold symptom is recorded. The code above is used to define a Javascript functi0n that records a value dependent on the answer chosen, and switches to the next page when any "yes" or "no" button is pressed. This code is used to calculate the results based on the values recorded from the answered questions. This code also displays the percentages of cold and flu when the "results" button is pressed. I also wanted to note that embedding this into the script would entirely disrupt my code -->
 	
@@ -101,8 +105,12 @@ sizes. -->
 	<p>Are you feeling like you might have Endometriosis but wonder if it is Pelvic Inflammatory Disease? Answer a few short questions to find out!</p>
 
 	<a href="#two" class="w3-btn w3-grey w3-round"> Get Started </a>
-	<h2>HTML Image</h2>
-		<img src="https://www.istockphoto.com/photos/uterus-cartoon" alt="Smiling Uterus">
+<div class="w3-container w3-center">
+    <input type="range" id="resizeSlider" min="100" max="600" value="300" class="w3-margin">
+    <br>
+    <img id="resizableImage" src="https://www.dreamstime.com/illustration/uterus-smile.html" alt="Smiling Uterus" style="width: 300px; height: auto;">
+</div>
+
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
