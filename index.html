@@ -94,8 +94,8 @@ footer {
     width: 100%;
 }
 </style>
-<!-- The code above codes for the stylistic choices of the headers, pages, and footers such as the heighth, width, and index 
-sizes. -->
+	<!-- The code above codes for the stylistic choices of the headers, pages, and footers such as the heighth, width, and index 
+	sizes. -->
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>Endometriosis or Pelvic Inflammatory Disease?</h1>
@@ -111,138 +111,138 @@ sizes. -->
 	<!-- This code above creates the "get started" button to continue to the questions, and puts the resizable uterus image onto the first page -->
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code. THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-<!-- This code above is used to display the introduction paragraph, explain where the research is being done, and provide an 
-advisory warning about the purpose of the app. -->
+		<!-- This code above is used to display the introduction paragraph, explain where the research is being done, and provide an 
+		advisory warning about the purpose of the app. -->
 <div class="page" id="two">
   <div class="w3-container w3-flat-carrot">
     <h1>Question 1</h1>
   </div>
-<!-- This code above defines the second page and labels the header as "Question 1" -->
+	<!-- This code above defines the second page and labels the header as "Question 1" -->
   <div id="content" class="w3-container">
     <p>Have your symptoms recently developed?</p>
-<!-- This code shows the details of the first symptoms being asked. -->
+	<!-- This code shows the details of the first symptoms being asked. -->
     <button class="w3-btn w3-black" onclick="handleResponse('#three', 'no')">Yes</button>
     <button class="w3-btn w3-black" onclick="handleResponse('#three', 'yes')">No</button>
   </div>
 </div>
-<!-- This code above creates the buttons, and defines that on the click of either "Yes" or "No" button, a value is to be recorded
-and the page is to move on to the next page. -->
+	<!-- This code above creates the buttons, and defines that on the click of either "Yes" or "No" button, a value is to be recorded
+	and the page is to move on to the next page. -->
 <script>
   function navigateToNextPage(url) {
     window.location.href = url;
   }
 </script>
-<!-- This code above is calling onto the JavaScript function that allows for the page to be moved on to page three on the click of a button. -->
+	<!-- This code above is calling onto the JavaScript function that allows for the page to be moved on to page three on the click of a button. -->
 <div class="page" id="three">
   <div class="w3-container w3-flat-carrot">
     <h1>Question 2</h1>
   </div>
-<!-- This code above defines page three as a new page, and allows the header to read "Question 2" -->
+	<!-- This code above defines page three as a new page, and allows the header to read "Question 2" -->
   <div id="content" class="w3-container">
     <p>Have you ever had an untreated STI?</p>
-<!-- This code above allows the next symptomatic question to be displayed on page three. -->
+	<!-- This code above allows the next symptomatic question to be displayed on page three. -->
     <button class="w3-btn w3-black" onclick="handleResponse('#four', 'no')">Yes</button>
     <button class="w3-btn w3-black" onclick="handleResponse('#four', 'yes')">No</button>
   </div>
 </div>
-<!-- The code above creates the "Yes" and "No" buttons on page three and records the values of the response based on the button
-clicked, and moves the page to page four. -->
+	<!-- The code above creates the "Yes" and "No" buttons on page three and records the values of the response based on the button
+	clicked, and moves the page to page four. -->
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
-<!-- This code above makes the footer read "DIY!" for the first three pages. -->
+	<!-- This code above makes the footer read "DIY!" for the first three pages. -->
 <div class="page" id="four">
   <div class="w3-container w3-flat-carrot">
     <h1>Question 3</h1>
   </div>
-<!-- This code above defines page four as a new page, and displays the header as "Question 3". -->
+	<!-- This code above defines page four as a new page, and displays the header as "Question 3". -->
   <div id="content" class="w3-container">
     <p>Do you have severe menstrual cramps?</p>
-<!-- This code above displays the symptomatic question below the "Question 3" header. -->
+	<!-- This code above displays the symptomatic question below the "Question 3" header. -->
     <button class="w3-btn w3-black" onclick="handleResponse('#five', 'yes')">Yes</button>
     <button class="w3-btn w3-black" onclick="handleResponse('#five', 'no')">No</button>
   </div>
 </div>
-<!-- This code above creates the buttons on page four, and codes the "yes" response to code for endometriosis, and "no" to code for PID.
-This code also moves to page five after either button is pressed. -->
+	<!-- This code above creates the buttons on page four, and codes the "yes" response to code for endometriosis, and "no" to code for PID.
+	This code also moves to page five after either button is pressed. -->
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
-<!-- The code above creates the footer displaying "DIY!" on page four. -->
+	<!-- The code above creates the footer displaying "DIY!" on page four. -->
 <div class="page" id="five">
   <div class="w3-container w3-flat-carrot">
     <h1>Question 4</h1>
   </div>
-<!-- The code above defines page five as a new page, and makes "Question 4" the header of the page. -->
+	<!-- The code above defines page five as a new page, and makes "Question 4" the header of the page. -->
   <div id="content" class="w3-container">
     <p>Do you have pain during urination?</p>
-<!-- The code above defines the next symptomatic question on page five, and defines it below the header -->
+	<!-- The code above defines the next symptomatic question on page five, and defines it below the header -->
     <button class="w3-btn w3-black" onclick="handleResponse('#six', 'yes')">Yes</button>
     <button class="w3-btn w3-black" onclick="handleResponse('#six', 'no')">No</button>
   </div>
 </div>
-<!-- The code above creates the "Yes" and "No" buttons on page five, quantifies a numerical value for each, and commands the
-clicking of either to move to page six -->
+	<!-- The code above creates the "Yes" and "No" buttons on page five, quantifies a numerical value for each, and commands the
+	clicking of either to move to page six -->
 <footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
+   <p>DIY!</p>
 </footer>
-<!-- The code above creates the "DIY!" footer on page five. -->	
+	<!-- The code above creates the "DIY!" footer on page five. -->	
 <div class="page" id="six">
   <div class="w3-container w3-flat-carrot">
     <h1>Question 5</h1>
   </div>
-<!-- The code above creates page six as a new page and creates the "Question 5" header -->
+	<!-- The code above creates page six as a new page and creates the "Question 5" header -->
   <div id="content" class="w3-container">
     <p>Do you have consistant pelvic pain?</p>
-<!-- The code above displays the next symptom question on page six below the "Question 5" header -->
+	<!-- The code above displays the next symptom question on page six below the "Question 5" header -->
     <button class="w3-btn w3-black" onclick="handleResponse('#seven', 'yes')">Yes</button>
     <button class="w3-btn w3-black" onclick="handleResponse('#seven', 'no')">No</button>
   </div>
 </div>
-<!-- The code above creates the buttons on page six and has the JavaScript function that on the click of the button, the answer
-codes for a numerical value and moving to page seven. -->
+	<!-- The code above creates the buttons on page six and has the JavaScript function that on the click of the button, the answer
+	codes for a numerical value and moving to page seven. -->
 <footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
+  <p>DIY!</p>
 </footer>
-<!-- The code above creates the footer on page six that displays "DIY!" -->
+	<!-- The code above creates the footer on page six that displays "DIY!" -->
 <div class="page" id="seven">
   <div class="w3-container w3-flat-carrot">
     <h1>Question 6</h1>
   </div>
-<!-- The code above creates page seven as a new page and defines the header as "Question 6" -->
+	<!-- The code above creates page seven as a new page and defines the header as "Question 6" -->
   <div id="content" class="w3-container">
     <p>Do you have abnormal smelling vaginal discharge?</p>
-<!-- The code above defines the final question that is intended to identify PID, and places the question below the header -->
+	<!-- The code above defines the final question that is intended to identify PID, and places the question below the header -->
     <button class="w3-btn w3-black" onclick="handleResponse('#results', 'no')">Yes</button>
     <button class="w3-btn w3-black" onclick="handleResponse('#results', 'yes')">No</button>
   </div>
 </div>
-<!-- The code above creates the buttons on page seven and directs them to record a numerical value for either endometriosis or PID
-depending on which button is clicked. PID is recorded for "yes" and endometriosis for "no". The code also directs the page to shift
-to the results page after a button is clicked. -->
+	<!-- The code above creates the buttons on page seven and directs them to record a numerical value for either endometriosis or PID
+	depending on which button is clicked. PID is recorded for "yes" and endometriosis for "no". The code also directs the page to shift
+	to the results page after a button is clicked. -->
 <footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
+  <p>DIY!</p>
 </footer>
-<!-- The code above defines the footer for page seven to read the same as the other pages -->
+	<!-- The code above defines the footer for page seven to read the same as the other pages -->
 <div class="page" id="results">
   <div class="w3-container w3-flat-carrot">
     <h1>Results</h1>
   </div>
-<!-- The code above the defines the last independent page as the results page and shows the header as reading "Results" -->	
+	<!-- The code above the defines the last independent page as the results page and shows the header as reading "Results" -->	
   <div id="content" class="w3-container">
     <button class="w3-btn w3-black" onclick="calculateResults()">Show Results</button>
     <p id="resultsOutput"></p>
   </div>
 </div>
-<!-- The code above creates the button for the results that reads "Show Results", which upon being clicked triggers the JavaScript
-function to calculate the results of the collected numerical values based on the answers clicked in the previous six questions.
-The results output physically displays the percentages that JavaScript calculated after the button for "Show Results" is pressed -->
+	<!-- The code above creates the button for the results that reads "Show Results", which upon being clicked triggers the JavaScript
+	function to calculate the results of the collected numerical values based on the answers clicked in the previous six questions.
+	The results output physically displays the percentages that JavaScript calculated after the button for "Show Results" is pressed -->
 <footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
+  <p>DIY!</p>
 </footer>
-<!-- This code creates the footer on the results page, and allows it to display the words "DIY!", as the other pages have as well -->
+	<!-- This code creates the footer on the results page, and allows it to display the words "DIY!", as the other pages have as well -->
 </body>
-<!-- This code defines the end of the body of code -->
+	<!-- This code defines the end of the body of code -->
 </html>
-<!-- This code above defines the coding language that was used for this website. -->
-<!-- ChatGPT was utilized to help with certain JavaScript and HTML functions in order to make the best version of this website --> 
+	<!-- This code above defines the coding language that was used for this website. -->
+	<!-- ChatGPT was utilized to help with certain JavaScript and HTML functions in order to make the best version of this website --> 
