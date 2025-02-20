@@ -7,7 +7,7 @@
 Authors in chronological order of contribution:
 Tim Riedel
 Zara Illston
- 
+
 Further Information:
 http://cns.utexas.edu/fri
  
@@ -20,7 +20,7 @@ The goal of this code is to create an online diagnostic app to tell the differen
 and pelvic inflammatory disease.
  
 Known Issues:
-There is no ability to calculate results if no questions are answered, the footer repeats, and the app keeps inputting
+There is no ability to calculate results if no questions are answered, the footer code repeats, and the app keeps inputting
 infinite question answers if the page is not reloaded.
 
 https://www.w3schools.com/w3css/default.asp
@@ -34,7 +34,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       <link rel="stylesheet" href="w3-colors-flat.css">
    </head> 
 
-<!-- The code shown above is used to display the title of the app shown on the tab of the website page. -->
+<!-- The code shown above is used to display the title of the app shown on the tab of the website page/tab. -->
 
 <script>
   let endometriosisCount = 0; 
@@ -58,7 +58,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         document.getElementById("resizableImage").style.width = newSize;
     });
 </script>
-<!-- This code is used to count the number of times that a coded allergy or cold symptom is recorded. The code above is used to define a Javascript functi0n that records a value dependent on the answer chosen, and switches to the next page when any "yes" or "no" button is pressed. This code is used to calculate the results based on the values recorded from the answered questions. This code also displays the percentages of cold and flu when the "results" button is pressed. I also wanted to note that embedding this into the script would entirely disrupt my code -->
+<!-- This code is used to count the number of times that a coded endometriosis answer or PID answer is recorded. The code above is used to define a Javascript functi0n that records a value dependent on the answer chosen, and switches to the next page when any "yes" or "no" button is pressed. This code is used to calculate the results based on the values recorded from the answered questions. This code also displays the percentages of endometriosis and PID likelihood when the "results" button is pressed. I also wanted to note that embedding this into the script would entirely disrupt my code, and that is why it is below. -->
 	
 
 <style>  
@@ -100,7 +100,7 @@ sizes. -->
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>Endometriosis or Pelvic Inflammatory Disease?</h1>
 </div>
-<!-- This code above defines the header for the first page. -->	
+	<!-- This code above defines the header for the first page. -->	
 <div id="content" class="w3-container">
 	<p>Are you feeling like you might have Endometriosis but wonder if it is Pelvic Inflammatory Disease? Answer a few short questions to find out!</p>
 
@@ -108,10 +108,9 @@ sizes. -->
 <div class="w3-container w3-center">
     <img id="resizableImage" src="https://thumbs.dreamstime.com/z/cute-cartoon-uterus-smile-pink-background-92273914.jpg?ct=jpeg" alt="Smiling Uterus" style="width: 300px; height: auto;">
 </div>
-
+	<!-- This code above creates the "get started" button to continue to the questions, and puts the resizable uterus image onto the first page -->
 	
-	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
-	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code. THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 <!-- This code above is used to display the introduction paragraph, explain where the research is being done, and provide an 
 advisory warning about the purpose of the app. -->
 <div class="page" id="two">
@@ -133,7 +132,7 @@ and the page is to move on to the next page. -->
     window.location.href = url;
   }
 </script>
-<!-- This code above is the JavaScript function that allows for the page to be moved on to page three on the click of a button. -->
+<!-- This code above is calling onto the JavaScript function that allows for the page to be moved on to page three on the click of a button. -->
 <div class="page" id="three">
   <div class="w3-container w3-flat-carrot">
     <h1>Question 2</h1>
@@ -164,7 +163,7 @@ clicked, and moves the page to page four. -->
     <button class="w3-btn w3-black" onclick="handleResponse('#five', 'no')">No</button>
   </div>
 </div>
-<!-- This code above creates the buttons on page four, and codes the "yes" response to code for cold, and "no" to code for allergy.
+<!-- This code above creates the buttons on page four, and codes the "yes" response to code for endometriosis, and "no" to code for PID.
 This code also moves to page five after either button is pressed. -->
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
@@ -213,13 +212,13 @@ codes for a numerical value and moving to page seven. -->
 <!-- The code above creates page seven as a new page and defines the header as "Question 6" -->
   <div id="content" class="w3-container">
     <p>Do you have abnormal smelling vaginal discharge?</p>
-<!-- The code above defines the final question that is intended to identify a cold, and places the question below the header -->
+<!-- The code above defines the final question that is intended to identify PID, and places the question below the header -->
     <button class="w3-btn w3-black" onclick="handleResponse('#results', 'no')">Yes</button>
     <button class="w3-btn w3-black" onclick="handleResponse('#results', 'yes')">No</button>
   </div>
 </div>
-<!-- The code above creates the buttons on page seven and directs them to record a numerical value for either cold or allergies
-depending on which button is clicked. Cold is recorded for "yes" and allergies for "no". The code also directs the page to shift
+<!-- The code above creates the buttons on page seven and directs them to record a numerical value for either endometriosis or PID
+depending on which button is clicked. PID is recorded for "yes" and endometriosis for "no". The code also directs the page to shift
 to the results page after a button is clicked. -->
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
